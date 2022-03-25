@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant/screens/add_task_screen.dart';
-import 'package:plant/widgets/task_list.dart';
+import 'package:plant/widgets/todo_list.dart';
 
 class TasksScreen extends StatelessWidget {
   TasksScreen({Key? key}) : super(key: key);
@@ -54,7 +54,7 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(30),
                 ),
               ),
-              child: TaskList(),
+              child: TodoList(),
             ),
           ),
         ],
