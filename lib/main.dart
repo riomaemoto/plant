@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(BigAss());
 
-class MyApp extends StatelessWidget {
+class BigAss extends StatelessWidget {
+  const BigAss({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: BallPage(),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class BallPage extends StatelessWidget {
+  const BallPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('aaaaa'),
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: Text("Ask me anything"),
+        backgroundColor: Colors.blue[900],
       ),
+      body: Container(),
     );
   }
 }
