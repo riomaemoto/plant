@@ -10,7 +10,7 @@ class _TodoTileState extends State<TodoTile> {
   bool isChecked = false;
 
   void checkboxCallback(bool checkboxstate) {
-        (newValue) {
+    (newValue) {
       setState(() {
         isChecked = checkboxstate;
       });
@@ -26,26 +26,31 @@ class _TodoTileState extends State<TodoTile> {
               decoration: isChecked ? TextDecoration.lineThrough : null),
         ),
         trailing: TaskCheckbox(
-            isChecked,toggleCheckboxState: checkboxCallback),
+          checkboxState: isChecked,
+          toggleCheckboxState: (bool checkboxState) {
+            setState(() {
+              isChecked = checkboxstate;
+            });
+          },
+        ),
       );
     }
   }
 }
 
 class TaskCheckbox extends StatelessWidget {
-  final bool = checkBoxState;
-final Function toggleCheckboxState;
+  final bool = checkboxState;
+  final Function toggleCheckBoxState;
 
-  TaskCheckbox(bool isChecked, {this.checkBoxState, this.toggleCheckboxState});
+  TaskCheckbox({this.checkboxState, this.toggleCheckboxState});
 
   @override
   Widget build(BuildContext context) {
     return Checkbox(
       activeColor: Colors.lightBlueAccent,
       // value: isChecked,
-      value: checkBoxState,
+      value: checkboxState,
       onChanged: toggleCheckboxState,
-      },
     );
   }
 }
