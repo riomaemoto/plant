@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:plant/price_screen.dart';
 
-void main() => runApp(Bitcoin());
+import 'quiz_brain.dart';
+import 'quiz_page.dart';
 
-class Bitcoin extends StatelessWidget {
-  const Bitcoin({Key? key}) : super(key: key);
+QuizBrain quizBrain = QuizBrain();
 
+void main() => runApp(Quiz());
+
+class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PriceScreen(),
-      theme: ThemeData.dark().copyWith(
-          primaryColor: Colors.lightBlue,
-          scaffoldBackgroundColor: Colors.white),
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: QuizPage(),
+          ),
+        ),
+      ),
     );
   }
 }
