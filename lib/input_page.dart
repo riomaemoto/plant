@@ -40,7 +40,7 @@ class _InputPageState extends State<InputPage> {
                     color: mainColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
-                      label: "female",
+                      label: "Female",
                     ),
                   ),
                 ),
@@ -91,8 +91,9 @@ class IconContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          FontAwesomeIcons.mars,
+          icon,
           size: 80.0,
+          color: Colors.white,
         ),
         SizedBox(
           height: 15,
@@ -101,7 +102,7 @@ class IconContent extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 18,
-            color: Color(0xFFFFFFFF),
+            color: Color(0xFF8D8E98),
           ),
         ),
       ],
@@ -117,7 +118,8 @@ class ReuseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15),
+      child: cardChild,
+      margin: EdgeInsets.all(13),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
